@@ -15,4 +15,18 @@ if (menuToggle && navigation) {
             navigation.classList.remove("open");
         });
     });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            menuToggle.setAttribute("aria-expanded", "false");
+            navigation.classList.remove("open");
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 900) {
+            menuToggle.setAttribute("aria-expanded", "false");
+            navigation.classList.remove("open");
+        }
+    });
 }
